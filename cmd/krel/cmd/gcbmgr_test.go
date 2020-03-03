@@ -27,6 +27,7 @@ import (
 	"k8s.io/release/cmd/krel/cmd/cmdfakes"
 	"k8s.io/release/pkg/gcp/build"
 	"k8s.io/release/pkg/git"
+	"k8s.io/release/pkg/release"
 )
 
 func mockRepo() cmd.Repository {
@@ -74,7 +75,7 @@ func TestRunGcbmgrList(t *testing.T) {
 				Version:  mockVersion(),
 			},
 			listJobOpts: fakeListJobs{
-				expectedProject:  "kubernetes-release-test",
+				expectedProject:  release.DefaultKubernetesStagingProject,
 				expectedLastJobs: int64(5),
 				err:              nil,
 			},
@@ -90,7 +91,7 @@ func TestRunGcbmgrList(t *testing.T) {
 				Version:  mockVersion(),
 			},
 			listJobOpts: fakeListJobs{
-				expectedProject:  "kubernetes-release-test",
+				expectedProject:  release.DefaultKubernetesStagingProject,
 				expectedLastJobs: int64(10),
 				err:              errors.New("Generic Error"),
 			},
