@@ -103,7 +103,11 @@ The entire build process takes several hours. Once you are ready to begin, the d
 
 ### Validating packages
 
-Now that `rapture` has successfully complete, we need to verify the packages that were just created. This validation can be done on any instance where Kubernetes is not already installed. (Ideally, you would want to spin up a new VM to test.)
+Now that `rapture` has successfully complete, we need to verify the packages that were just published and created correctly.
+
+To check for publish success, see the [Debian package list][deb-package-list] and [RPM package list][rpm-package-list] for the versions that were just uploaded.
+
+Download/Install validation can be done on any instance where Kubernetes is not already installed. (Ideally, you would want to spin up a new VM to test.)
 
 **If you are on a system with any of these packages are already installed, you must uninstall them first.**
 
@@ -173,3 +177,5 @@ If there is continued test failure on this dashboard without intervention from t
 [release-team]: https://groups.google.com/forum/#!forum/kubernetes-release-team
 [security-release-process]: /security-release-process-documentation/security-release-process.md
 [test-infra-oncall]: https://go.k8s.io/oncall
+[deb-package-list]: https://packages.cloud.google.com/apt/dists/kubernetes-xenial/main/binary-amd64/Packages
+[rpm-package-list]: https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64/repodata/primary.xml
